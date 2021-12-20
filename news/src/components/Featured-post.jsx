@@ -21,10 +21,10 @@ class FeaturedPost extends Component {
 <div className="row mb-2">
             <div className="col-md-6">
                 <div
-                    className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 ">
-                    <div className="col p-4 d-flex flex-column ">
-                        <strong className="d-flex mb-2 text-primary">World</strong>
-                        <h3 className="d-flex mb-0">Featured post</h3>
+                    className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div className="col p-4 d-flex flex-column position-static">
+                        <strong className="d-inline-block mb-2 text-primary">World</strong>
+                        <h3 className="mb-0">Featured post</h3>
                         <div className="mb-1 text-muted">Nov 12</div>
                         <p className="card-text mb-auto">
                             This is a wider card with supporting text below as a natural
