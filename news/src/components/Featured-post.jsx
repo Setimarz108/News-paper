@@ -33,13 +33,7 @@ class FeaturedPost extends Component {
                         <a href="#" className="stretched-link">Continue reading</a>
                     </div>
                     <div className="col-auto d-none d-lg-block">
-                        <svg className="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
-                            preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                            aria-label="Placeholder: Thumbnail">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c" />
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                        </svg>
+                        <img style={{width: "200px" , height:"250px", objectFit: "cover"}} src="https://images.unsplash.com/photo-1633113214207-1568ec4b3298?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="" />
                     </div>
                 </div>
             </div>
@@ -57,13 +51,7 @@ class FeaturedPost extends Component {
                         <a href="#" className="stretched-link">Continue reading</a>
                     </div>
                     <div className="col-auto d-none d-lg-block">
-                        <svg className="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
-                            preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                            aria-label="Placeholder: Thumbnail">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c" />
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                        </svg>
+                    <img style={{width: "200px" , height:"250px", objectFit: "cover"}} src="https://images.unsplash.com/photo-1639972585193-e360d1bd1dd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="" />
                     </div>
                 </div>
             </div>
