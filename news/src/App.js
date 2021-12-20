@@ -9,6 +9,7 @@ function App() {
     <div className="App mx-auto">
       <Navbar />
       <FeaturedPost />
+      <SinglePost />
     </div>
   );
 }
