@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans:ital@1&family=Oswald&family=Playfair+Display:wght@700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans:ital@1&family=Oswald&family=Playfair+Display:wght@700;900&display=swap");
 
 .App {
-  text-align: center;
+  text-align: start;
   max-width: 80%;
   margin-left: 10%;
-  
 }
-
