@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 
 export default class Navbar extends Component {
-
+ 
 
     render() {
         return (
@@ -31,8 +31,8 @@ export default class Navbar extends Component {
         </header>
 
         <div className="nav-scroller py-1 mb-2">
-            <nav className="nav d-flex justify-content-between">
-                <a className="p-2 text-muted" href="#">World</a>
+            <nav className="nav d-flex justify-content-between"> {console.log(this.props)}
+                <a onClick={ (e)=> this.props.changeCategory(e.target.value)} className="p-2 text-muted" href="#">World</a>
                 <a className="p-2 text-muted" href="#">U.S.</a>
                 <a className="p-2 text-muted" href="#">Technology</a>
                 <a className="p-2 text-muted" href="#">Design</a>
