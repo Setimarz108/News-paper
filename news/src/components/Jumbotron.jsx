@@ -36,7 +36,7 @@ export default class Jumbotron extends Component {
 
     render() {
         return (
-            <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark" style={{ backgroundImage: `url(${this.state.articles.urlToImage})`, backgroundRepeat:"no-repeat", backgroundPosition:"center", backgroundSize:"cover"}}
+            <div className="jumbotron p-3 p-md-5 text-white rounded bg-dark" style={{ backgroundImage: `url(${this.state.articles.urlToImage})`, backgroundRepeat:"no-repeat", backgroundPosition:"center", backgroundSize:"cover"}}
             >
                 <div class="col-md-6 px-0">
                     <h1 class="display-4 font-italic">{this.state.articles.title}</h1>
