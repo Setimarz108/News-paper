@@ -5,17 +5,53 @@ import FeaturedPost from "./components/Featured-post";
 import SinglePost from "./components/SinglePost";
 import Jumbotron from "./components/Jumbotron";
 import FetchData from "./components/FetchData";
+import { Component } from "react";
 
-function App() {
-  return (
-    <div className="App mx-auto">
-      <FetchData />
-      <Navbar />
-      <Jumbotron />
-      <FeaturedPost />
-      <SinglePost />
-    </div>
-  );
+class App extends Component {
+  state = {
+    parameter: "q",
+    query: "london",
+    articles: [],
+    links: [
+      `business`,
+      `entertainment`,
+      `general`,
+      `health`,
+      `science`,
+      `sports`,
+      `technology`,
+    ],
+    jumboBg:
+      "https://images.unsplash.com/photo-1540407211310-8feaba575bca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80",
+  };
+
+  componentDidMount = async () => {
+    try {
+      let response = await fetch(
+        `https://newsapi.org/v2/top-headlines?${this.state.parameter}=${this.state.query}&apiKey=ea4fdf74476a425c84207193b5c74bbf`
+      );
+      if (response.ok) {
+        console.log("Is ok");
+        let data = await response.json();
+        this.setState({ articles: data.articles });
+      }
+    } catch {
+      console.log("Something went wrong");
+    }
+    console.log(this.state.articles[0].urlToImage);
+  };
+  render() {
+    return (
+      <div className="App mx-auto">
+        <Navbar links={this.state.links} />
+        <Jumbotron bgImage={this.state.jumboBg} />
+
+        <FeaturedPost />
+        {/* category={} title={} publishedAt={} description={} url={} urlToImage={} */}
+        <SinglePost />
+      </div>
+    );
+  }
 }
 
 export default App;
