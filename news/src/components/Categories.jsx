@@ -5,11 +5,7 @@ import React, { Component } from 'react'
 
 export default class Categories extends Component {
 
-    state = {       
-        selectedCategory: '', 
-        articles: []
-    }
-   
+       
     componentDidMount = async ()=>{
        
         try{
@@ -41,9 +37,9 @@ export default class Categories extends Component {
                         className="p-2 text-muted" key={category} 
                         href={'#' + category}>{category.slice(0, 1).toUpperCase() + 
                         category.slice(1)}</a>
-                    ))
+                    )) 
                 }
-
+             
  
                  {/* <a onClick={ (e)=> this.props.changeCategory(e.target.value)} className="p-2 text-muted" href="#">World</a>
                  <a className="p-2 text-muted" href="#">U.S.</a>
