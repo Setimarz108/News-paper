@@ -5,6 +5,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FeaturedPost from "./components/Featured-post";
 import SinglePost from "./components/SinglePost";
+import Jumbotron from './components/Jumbotron';
 import { Component } from 'react';
 
 const categories =  ['business', 'entertainment', 'general', 'health', 'science', 'sports','technology']
@@ -24,6 +25,7 @@ class App extends Component {
     <div className="App mx-auto"> {console.log(this.state)}
       
       <Navbar  categories={categories}/>
+      <Jumbotron/>
       <FeaturedPost />
       <SinglePost category={categories}/>
     </div>
