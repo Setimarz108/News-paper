@@ -38,10 +38,10 @@ export default class Jumbotron extends Component {
         return (
             <div className="jumbotron p-3 p-md-5 text-white rounded bg-dark" style={{ backgroundImage: `url(${this.state.articles.urlToImage})`, backgroundRepeat:"no-repeat", backgroundPosition:"center", backgroundSize:"cover"}}
             >
-                <div class="col-md-6 px-0">
-                    <h1 class="display-4 font-italic">{this.state.articles.title}</h1>
-                <p class="lead my-3">{this.state.articles.description}</p>
-                <p class="lead mb-0"><a href="https://getbootstrap.com/docs/4.0/examples/blog/#" class="text-white font-weight-bold">Continue reading...</a></p>
+                <div className="col-md-6 px-0">
+                    <h1 className="display-4 font-italic">{this.state.articles.title}</h1>
+                <p className="lead my-3">{this.state.articles.description}</p>
+                <p className="lead mb-0"><a href="https://getbootstrap.com/docs/4.0/examples/blog/#" className="text-white font-weight-bold">Continue reading...</a></p>
                 </div>
             </div>
         )

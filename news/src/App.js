@@ -1,21 +1,34 @@
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from './components/Navbar';
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "./components/Navbar";
 import FeaturedPost from "./components/Featured-post";
 import SinglePost from "./components/SinglePost";
-import Jumbotron from "./components/Jumbotron";
-import FetchData from "./components/FetchData";
+import { Component } from 'react';
 
-function App() {
+const categories =  ['business', 'entertainment', 'general', 'health', 'science', 'sports','technology']
+
+class App extends Component {
+
+   state = {
+    
+     category : "",
+
+   }
+
+   
+  render(){
+
   return (
-    <div className="App mx-auto">
-      <FetchData />
-      <Navbar />
-      <Jumbotron />
+    <div className="App mx-auto"> {console.log(this.state)}
+      
+      <Navbar  categories={categories}/>
       <FeaturedPost />
-      <SinglePost />
+      <SinglePost category={categories}/>
     </div>
   );
+ }
 }
 
 export default App;
