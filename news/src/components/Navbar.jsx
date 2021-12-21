@@ -2,11 +2,6 @@
 import React, { Component } from 'react'
 import Categories from './Categories'
 
-<<<<<<< Updated upstream
-=======
-
-
->>>>>>> Stashed changes
 export default class Navbar extends Component {
  
 
@@ -36,13 +31,9 @@ export default class Navbar extends Component {
             </div>
         </header>
 
-<<<<<<< Updated upstream
-        <Categories links={['entertainment']}/>
 
-        
-=======
-      {/*   <Categories categories={categories}/> */}
->>>>>>> Stashed changes
+         <Categories /> 
+
 
                 
             </div>

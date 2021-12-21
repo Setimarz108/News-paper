@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 
- 
 
 export default class Jumbotron extends Component {
 
@@ -11,7 +10,6 @@ export default class Jumbotron extends Component {
         articles: []
         
     }
-
 
     componentDidMount = async() => {
 
@@ -32,9 +30,7 @@ export default class Jumbotron extends Component {
 
     }
         
-    
-
-    render() {
+        render() {
         return (
             <div className="jumbotron p-3 p-md-5 text-white rounded bg-dark" style={{ backgroundImage: `url(${this.state.articles.urlToImage})`, backgroundRepeat:"no-repeat", backgroundPosition:"center", backgroundSize:"cover"}}
             >

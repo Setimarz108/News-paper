@@ -12,7 +12,7 @@ export default class SinglePost extends Component {
                 <h3 className="pb-4 mb-4 font-italic border-bottom">From the Firehose</h3>
 
                 <div className="blog-post">
-                    <h2 className="blog-post-title">Sample blog post</h2>
+                    <h2 className="blog-post-title">{this.props.article.title}</h2>
                     <p className="blog-post-meta">
                         January 1, 2014 by <a href="#">Mark</a>
                     </p>

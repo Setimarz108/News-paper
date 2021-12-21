@@ -1,17 +1,12 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-<<<<<<< Updated upstream
 import Navbar from "./components/Navbar";
-import FeaturedPost from "./components/Featured-post";
-import SinglePost from "./components/SinglePost";
-import Jumbotron from "./components/Jumbotron";
-import FetchData from "./components/FetchData";
-=======
 import FeaturedPost from "./components/FeaturedPost";
 import SinglePost from "./components/SinglePost";
 import { Component } from 'react';
-import { Jumbotron } from 'react-bootstrap';
+import Jumbotron from "./components/Jumbotron";
 
+const categories = ['business','sports','entertainment','health','general','science','technology']
 
 class App extends Component {
 
@@ -38,30 +33,19 @@ componentDidMount = async ()=>{
     }
 }
  
-
-     render(){
->>>>>>> Stashed changes
-
-function App() {
-  return (
-<<<<<<< Updated upstream
-    <div className="App mx-auto">
-      <FetchData />
-      <Navbar />
-      <Jumbotron />
-      <FeaturedPost />
-      <SinglePost />
-=======
-    <div className="App mx-auto"> {console.log(this.state)}
+    render(){
+        return (
+    <div className="App mx-auto"> 
       
-      <Navbar categories={["business","entertainment",]}/>
+      <Navbar categories={categories}/>
       <Jumbotron/>
-      <FeaturedPost post={this.state.articles}/>
+      <FeaturedPost post={this.state.articles[0]}/>
       <SinglePost />
 
->>>>>>> Stashed changes
     </div>
   );
+
+ } 
 }
 
 export default App;
