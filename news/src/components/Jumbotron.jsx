@@ -17,7 +17,7 @@ export default class Jumbotron extends Component {
 
         
             try{
-                let response = await fetch (`https://newsapi.org/v2/top-headlines?${this.state.parameter}=${this.state.query}&apiKey=1931895ad8f647eabfcc4f8434c25d34`)
+                let response = await fetch (`https://newsapi.org/v2/top-headlines?${this.state.parameter}=${this.state.query}&apiKey=e8f72e73c91240da8aa5810ea86636cd`)
                 if (response.ok){
                     console.log("Is ok")
                     let data = await response.json()

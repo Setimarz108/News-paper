@@ -12,55 +12,40 @@ class App extends Component {
 
       
    state = {       
-    selectedCategory: 'sports', 
     articles: null,
 }
 
-componentDidMount = async ()=>{
+componentDidMount = () => {
+    this.getNews("business");
+  };
+
+getNews = async (category)=>{
    
     try{
-             let response = await fetch (`https://newsapi.org/v2/top-headlines?category=${this.state.selectedCategory}&apiKey=1931895ad8f647eabfcc4f8434c25d34`)
+             let response = await fetch (`https://newsapi.org/v2/top-headlines?category=${category}&apiKey=e8f72e73c91240da8aa5810ea86636cd`)
         if (response.ok){
             console.log("Is ok")
             let data = await response.json()
             console.log("main fetch",data)
              this.setState({articles: data.articles})
-           
+        }else {
+                this.setState({ error: true });
+                console.log("fetch failed");
+              }
             
         }
-    }catch{
+     catch{
         console.log("Something went wrong")
     }
    }
+   
 
-    // componentDidUpdate = async (prevProps)=>{
-        
-    //     if(this.props.selectedCategory !== prevProps.selectedCategory){
-        
-    //     try{
-             
-    //         let response = await fetch (`https://newsapi.org/v2/top-headlines?category=${this.state.selectedCategory}&apiKey=1931895ad8f647eabfcc4f8434c25d34`)
-    //         console.log(this.state.selectedCategory)
-    //         if (response.ok){
-    //             console.log("Is ok")
-    //             let data = await response.json()
-    //             console.log("main fetch",data)
-    //              this.setState({articles: data.articles})
-               
-                
-    //         }
-    //     }catch{
-    //         console.log("Something went wrong")
-    //     }
-    //   }
-    // }
-     
-    render()
-        {
+       render(){
+
         return (
     <div className="App mx-auto"> 
       
-      <Navbar categories={categories} setState={this.setState}/>
+      <Navbar categories={categories} getNews={this.getNews} />
       <Jumbotron/>
       <FeaturedPost />
       <SinglePost post={this.state.articles[0]}/>
@@ -68,8 +53,9 @@ componentDidMount = async ()=>{
     </div>
   );
 
- } 
-}
+  }
+ }
+
 
 
 export default App;
