@@ -7,6 +7,7 @@ class FetchData extends React.Component {
         query: "london",
         articles: []
     }
+    
     componentDidMount = async ()=>{
         try{
             let response = await fetch (`https://newsapi.org/v2/top-headlines?${this.state.parameter}=${this.state.query}&apiKey=1931895ad8f647eabfcc4f8434c25d34`)

@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 
 export default class Categories extends Component {
 
+<<<<<<< Updated upstream
     state = {
        
         categories: []
@@ -24,6 +25,10 @@ export default class Categories extends Component {
         }
     }
   
+=======
+    
+     
+>>>>>>> Stashed changes
          
     render() {
         return (
