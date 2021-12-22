@@ -7,7 +7,7 @@ export default class Jumbotron extends Component {
 
     state = {
         parameter: "q",
-        query: "Spain",
+        query: "us",
         articles: []
         
     }

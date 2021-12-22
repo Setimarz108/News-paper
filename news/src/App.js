@@ -2,9 +2,9 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar";
 import FeaturedPost from "./components/FeaturedPost";
-import SinglePost from "./components/SinglePost";
 import { Component } from 'react';
 import Jumbotron from "./components/Jumbotron";
+import BlogList from "./components/BlogList";
 
 const categories = ['business','sports','entertainment','health','general','science','technology']
 
@@ -13,6 +13,7 @@ class App extends Component {
       
    state = {       
     articles: null,
+    searchResults: [],
 }
 
 componentDidMount = () => {
@@ -38,6 +39,33 @@ getNews = async (category)=>{
         console.log("Something went wrong")
     }
    }
+
+   searchBar = async (searchString) => {
+    if (searchString === "") {
+      this.setState({ error: false, searchResults: [] }, () => {
+        this.fetchNews();
+      });
+    } else {
+      try {
+        const response = await fetch(
+          this.URL + "&category=" + searchString + this.apikey
+        );
+        if (response.ok) {
+          const data = await response.json();
+          if (data.Response === "True") {
+            this.setState({ searchResults: data.articles, error: false });
+          } else {
+            this.setState({ error: true });
+          }
+        } else {
+          this.setState({ error: true });
+        }
+      } catch (error) {
+        this.setState({ error: true });
+        console.log(error);
+      }
+    }
+  };
    
 
        render(){
@@ -48,7 +76,7 @@ getNews = async (category)=>{
       <Navbar categories={categories} getNews={this.getNews} />
       <Jumbotron/>
       <FeaturedPost />
-      <SinglePost post={this.state.articles[0]}/>
+      <BlogList  articles={this.searchBar} getNews={this.getNews}/>
 
     </div>
   );
