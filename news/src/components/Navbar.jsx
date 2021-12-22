@@ -32,7 +32,7 @@ export default class Navbar extends Component {
             </div>
         </header>
 
-        <Categories categories={categories} setState={this.setState}/>
+        <Categories setCat={this.props.setCat} categories={categories} setState={this.setState}/>
 
                        
             </div>

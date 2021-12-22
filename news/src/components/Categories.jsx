@@ -6,21 +6,21 @@ import React, { Component } from 'react'
 export default class Categories extends Component {
 
        
-    componentDidMount = async ()=>{
+    // componentDidMount = async ()=>{
        
-        try{
-                 let response = await fetch (`https://newsapi.org/v2/top-headlines?category=${this.state.selectedCategory}&apiKey=1931895ad8f647eabfcc4f8434c25d34`)
-            if (response.ok){
-                console.log("Is ok")
-                let data = await response.json()
-                 this.setState({articles: data})
-                console.log(data)
+    //     try{
+    //              let response = await fetch (`https://newsapi.org/v2/top-headlines?category=${this.state.selectedCategory}&apiKey=1931895ad8f647eabfcc4f8434c25d34`)
+    //         if (response.ok){
+    //             console.log("Is ok")
+    //             let data = await response.json()
+    //              this.setState({articles: data})
+    //             console.log(data)
                 
-            }
-        }catch{
-            console.log("Something went wrong")
-        }
-    }
+    //         }
+    //     }catch{
+    //         console.log("Something went wrong")
+    //     }
+    // }
      
          
     render() {
@@ -33,7 +33,7 @@ export default class Categories extends Component {
          
                 {
                     this.props.categories.map(category => (
-                        <a onClick={e => {this.setState({...this.state,selectedCategory:category})}} 
+                        <a onClick={e => {this.props.setCat({mainCategory:category})}} 
                         className="p-2 text-muted" key={category} 
                         href={'#' + category}>{category.slice(0, 1).toUpperCase() + 
                         category.slice(1)}</a>

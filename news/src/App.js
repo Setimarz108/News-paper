@@ -14,6 +14,7 @@ class App extends Component {
    state = {       
     articles: null,
     searchResults: [],
+    mainCategory: []
 }
 
 componentDidMount = () => {
@@ -40,43 +41,20 @@ getNews = async (category)=>{
     }
    }
 
-   searchBar = async (searchString) => {
-    if (searchString === "") {
-      this.setState({ error: false, searchResults: [] }, () => {
-        this.fetchNews();
-      });
-    } else {
-      try {
-        const response = await fetch(
-          this.URL + "&category=" + searchString + this.apikey
-        );
-        if (response.ok) {
-          const data = await response.json();
-          if (data.Response === "True") {
-            this.setState({ searchResults: data.articles, error: false });
-          } else {
-            this.setState({ error: true });
-          }
-        } else {
-          this.setState({ error: true });
-        }
-      } catch (error) {
-        this.setState({ error: true });
-        console.log(error);
-      }
-    }
-  };
-   
-
-       render(){
+   render(){
 
         return (
     <div className="App mx-auto"> 
       
-      <Navbar categories={categories} getNews={this.getNews} />
+      <Navbar setCat={this.setState} categories={categories} getNews={this.getNews} />
       <Jumbotron/>
       <FeaturedPost />
-      <BlogList  articles={this.searchBar} getNews={this.getNews}/>
+     {this.state.mainCategory.length ><BlogList mainCat={this.state.mainCategory}  />}
+  
+    {/* 1) Here create a component NewsByCat pass mainCategory as props
+    , place an if statement around the component and only render if there is a mainCategory  
+    pass getNews as props, fetch inside the component and then map*/}
+      {/* <BlogList  /> */}
 
     </div>
   );
