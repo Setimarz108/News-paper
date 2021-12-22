@@ -9,20 +9,24 @@ import { Component } from "react";
 
 class App extends Component {
   state = {
-    parameter: "q",
-    query: "london",
+    parameter: "category",
+    query: "Business",
     articles: [],
     links: [
-      `business`,
-      `entertainment`,
-      `general`,
-      `health`,
-      `science`,
-      `sports`,
-      `technology`,
+      `Business`,
+      `Entertainment`,
+      `General`,
+      `Health`,
+      `Science`,
+      `Sports`,
+      `Technology`,
     ],
     jumboBg:
       "https://images.unsplash.com/photo-1540407211310-8feaba575bca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80",
+  };
+  changeQuery = (e) => {
+    this.setState({ query: this.state.links[2] });
+    console.log("changed query " + this.state.query);
   };
 
   componentDidMount = async () => {
@@ -38,12 +42,12 @@ class App extends Component {
     } catch {
       console.log("Something went wrong");
     }
-    console.log(this.state.articles[0].urlToImage);
+    console.log(this.state.articles[1].urlToImage);
   };
   render() {
     return (
       <div className="App mx-auto">
-        <Navbar links={this.state.links} />
+        <Navbar links={this.state.links} changeQ={this.changeQuery} />
         <Jumbotron bgImage={this.state.jumboBg} />
 
         <FeaturedPost />

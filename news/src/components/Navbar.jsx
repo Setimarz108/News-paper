@@ -34,7 +34,7 @@ export default class Navbar extends Component {
             <nav className="nav d-flex justify-content-between">
                 {
                     this.props.links.map(link=>
-                        (<a className="p-2 text-muted" key={link.id} href="#">{link}</a>
+                        (<a className="p-2 text-muted" key={link.id} onClick={this.props.changeQ} value={link} >{link}</a>
                         )
 
                     )
