@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FeaturedPost from "./components/Featuredpost";
-import SinglePost from "./components/ListOfPost";
+import ListOfPost from "./components/ListOfPost";
 import Jumbotron from './components/Jumbotron';
 import { Component } from 'react';
 
@@ -13,8 +13,8 @@ import { Component } from 'react';
 class App extends Component {
 
    state = {
-     blogs: [],
-     category : "business",
+     posts: [],
+     category : "sports",
      loading: true,
      error: false,
    }
@@ -57,8 +57,8 @@ render() {
       
       <Navbar  />
       <Jumbotron/> 
-      <FeaturedPost articles={this.state.blogs} categories={this.state.category}/>
-      {/* <SinglePost articles={this.state.blogs} categories={this.state.category}/> */}
+      <FeaturedPost articles={this.state.posts} categories={this.state.category}/>
+      <ListOfPost articles={this.state.posts} categories={this.state.category}/>
     </div>
   );
  }
