@@ -4,25 +4,26 @@ import Navbar from './components/Navbar';
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FeaturedPost from "./components/Featuredpost";
-import SinglePost from "./components/SinglePost";
+import SinglePost from "./components/ListOfPost";
 import Jumbotron from './components/Jumbotron';
 import { Component } from 'react';
 
-const categories =  ['business', 'entertainment', 'general', 'health', 'science', 'sports','technology']
+
 
 class App extends Component {
 
    state = {
      blogs: [],
      category : "business",
-
+     loading: true,
+     error: false,
    }
    componentDidMount = () => {
      this.loadArticles("")
    }
-   loadArticles = async (category) => {
+   loadArticles = async () => {
      try {
-       const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${this.state.category}&apiKey=44664f71879f4e05a41ac78d7c3eeaed`)
+       const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${this.state.category}&apiKey=03e5214f5868473eb4b3bb655d009efc`)
       if (response.ok) {
         const data = await response.json()
         console.log(data)
@@ -34,20 +35,30 @@ class App extends Component {
             alert('There was a problem with your the api')
           }
     }catch (error) {
-       console.log(error)
+        this.setState({ error: true })
      }
     }
    
+   
+ 
   
-   render() {
+    
 
+  
+   
+   
+   
+    
+
+  
+render() {
   return (
     <div className="App mx-auto"> {console.log(this.state)}
       
       <Navbar  />
-      <Jumbotron/>
+      <Jumbotron/> 
       <FeaturedPost articles={this.state.blogs} categories={this.state.category}/>
-      <SinglePost />
+      {/* <SinglePost articles={this.state.blogs} categories={this.state.category}/> */}
     </div>
   );
  }

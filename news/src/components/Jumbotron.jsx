@@ -7,7 +7,7 @@ export default class Jumbotron extends Component {
 
     state = {
         parameter: "q",
-        query: "Spain",
+        query: "us",
         articles: []
         
     }
@@ -17,7 +17,7 @@ export default class Jumbotron extends Component {
 
         
             try{
-                let response = await fetch (`https://newsapi.org/v2/top-headlines?${this.state.parameter}=${this.state.query}&apiKey=44664f71879f4e05a41ac78d7c3eeaed`)
+                let response = await fetch (`https://newsapi.org/v2/top-headlines?${this.state.parameter}=${this.state.query}&apiKey=03e5214f5868473eb4b3bb655d009efc`)
                 if (response.ok){
                     console.log("Is ok")
                     let data = await response.json()
@@ -36,11 +36,11 @@ export default class Jumbotron extends Component {
 
     render() {
         return (
-            <div className="jumbotron p-3 p-md-5 text-white rounded bg-dark" style={{ backgroundImage: `url(${this.state.articles.urlToImage})`, backgroundRepeat:"no-repeat", backgroundPosition:"center", backgroundSize:"cover"}}
+            <div className="jumbotron p-3 p-md-5 text-white rounded bg-dark" style={{ backgroundImage: `url(${this?.state?.articles?.urlToImage})`, backgroundRepeat:"no-repeat", backgroundPosition:"center", backgroundSize:"cover"}}
             >
                 <div className="col-md-6 px-0">
-                    <h1 className="display-4 font-italic">{this.state.articles.title}</h1>
-                <p className="lead my-3">{this.state.articles.description}</p>
+                    <h1 className="display-4 font-italic">{this?.state?.articles?.title}</h1>
+                <p className="lead my-3">{this?.state?.articles?.description}</p>
                 <p className="lead mb-0"><a href="https://getbootstrap.com/docs/4.0/examples/blog/#" className="text-white font-weight-bold">Continue reading...</a></p>
                 </div>
             </div>

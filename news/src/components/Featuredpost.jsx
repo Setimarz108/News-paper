@@ -8,16 +8,19 @@ class FeaturedPost extends Component {
       <div>
         <div className="row mb-2">
           <div className="col-md-6">
-             <SingleFeaturedPost
+            <SingleFeaturedPost
               article={this.props.articles[0]}
               categories={this.props.categories}
-            /> 
+            />
+            {console.log(
+              "Article before drilling to fA:^",
+              this.props.articles[0]
+            )}
           </div>
           <div className="col-md-6">
-             <SingleFeaturedPost
-              article={this.props.articles[1]}
-              categories={this.props.categories}
-            /> 
+       <SingleFeaturedPost article={this.props.articles[1]}
+              categories={this.props.categories}  />
+           
           </div>
         </div>
       </div>

@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
 import Aside from './Aside'
 
+
+
+
+
 export default class SinglePost extends Component {
+    
+   /*  const sortedBlogs = this.props.articles.sort((a, b) => b.date - a.date) */
     render() {
         return (
 
