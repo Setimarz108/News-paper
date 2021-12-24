@@ -17,7 +17,7 @@ class FeaturedPost extends Component {
     <Button variant="primary">Go somewhere</Button>
   </Card.Body>
 </Card> */}
-<div className="row mb-2">
+<div className="row mb-2" >
             <div className="col-md-6">
                 <div
                     className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
