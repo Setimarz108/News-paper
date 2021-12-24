@@ -6,6 +6,7 @@ import SinglePost from "./components/SinglePost";
 import Jumbotron from "./components/Jumbotron";
 import FetchData from "./components/FetchData";
 import { Component } from "react";
+import { format, formatDistance, formatRelative, subDays } from "date-fns";
 
 class App extends Component {
   state = {
@@ -21,18 +22,19 @@ class App extends Component {
       `Sports`,
       `Technology`,
     ],
-    jumboBg:
-      "https://images.unsplash.com/photo-1540407211310-8feaba575bca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80",
   };
-  changeQuery = (e) => {
-    this.setState({ query: this.state.links[2] });
-    console.log("changed query " + this.state.query);
+  changeQuery = (query) => {
+    this.fetchPosts(query);
   };
 
   componentDidMount = async () => {
+    this.fetchPosts();
+  };
+
+  fetchPosts = async (query = "Business") => {
     try {
       let response = await fetch(
-        `https://newsapi.org/v2/top-headlines?${this.state.parameter}=${this.state.query}&apiKey=ea4fdf74476a425c84207193b5c74bbf`
+        `https://newsapi.org/v2/top-headlines?category=${query}&apiKey=ea4fdf74476a425c84207193b5c74bbf`
       );
       if (response.ok) {
         console.log("Is ok");
@@ -42,17 +44,48 @@ class App extends Component {
     } catch {
       console.log("Something went wrong");
     }
-    console.log(this.state.articles[1].urlToImage);
+    const today = this.state.articles[2];
+    console.log(today);
   };
+
   render() {
     return (
       <div className="App mx-auto">
         <Navbar links={this.state.links} changeQ={this.changeQuery} />
-        <Jumbotron bgImage={this.state.jumboBg} />
+        {this.state.articles[0] && (
+          <Jumbotron
+            bgImage={this.state.articles[0].urlToImage}
+            description={this.state.articles[0].description}
+            contLink={this.state.articles[0].url}
+            title={this.state.articles[0].title}
+          />
+        )}
 
-        <FeaturedPost />
-        {/* category={} title={} publishedAt={} description={} url={} urlToImage={} */}
-        <SinglePost />
+        {this.state.articles[1] && (
+          <FeaturedPost
+            fPostsTitle={this.state.articles[2].title}
+            fDatePost={this.state.articles[2].publishedAt}
+            fDescriptionPost={this.state.articles[2].description}
+            fContLink={this.state.articles[2].url}
+            fUrlToImage={this.state.articles[2].urlToImage}
+            postsTitle={this.state.articles[3].title}
+            datePost={this.state.articles[3].publishedAt}
+            descriptionPost={this.state.articles[3].description}
+            contLink={this.state.articles[3].url}
+            urlToImage={this.state.articles[3].urlToImage}
+          />
+        )}
+
+        {/* fPostsTitle={} fDatePost={} fDescriptionPost ={} fContLink={} postsTitle={} datePost={} descriptionPost ={} contLink={}  */}
+        {this.state.articles[4] && (
+          <SinglePost
+            title={this.state.articles[4].title}
+            date={this.state.articles[4].publishedAt}
+            author={this.state.articles[4].author}
+            description={this.state.articles[4].description}
+            content={this.state.articles[5].content}
+          />
+        )}
       </div>
     );
   }
