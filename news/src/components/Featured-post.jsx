@@ -17,13 +17,13 @@ class FeaturedPost extends Component {
     <Button variant="primary">Go somewhere</Button>
   </Card.Body>
 </Card> */}
-<div className="row mb-2" >
+<div className="row mb-2" style={{height: "400px", }}>
             <div className="col-md-6">
                 <div
                     className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div className="col p-4 d-flex flex-column position-static">
-                        <strong className="d-inline-block mb-2 text-primary">World</strong>
-                        <h3 className="mb-0">{this.props.fPostsTitle}</h3>
+                        <strong className="d-inline-block mb-2 text-primary" >World</strong>
+                        <h3 className="mb-0" style={{width:"20rem", height:"2rem", overflow:"hidden"}}>{this.props.fPostsTitle}</h3>
                         <div className="mb-1 text-muted">{this.props.fDatePost}</div>
                         <p className="card-text mb-auto">
                             {
@@ -33,7 +33,7 @@ class FeaturedPost extends Component {
                         <a href={this.props.fContLink} className="stretched-link">Continue reading</a>
                     </div>
                     <div className="col-auto d-none d-lg-block">
-                        <img style={{width: "200px" , height:"250px", objectFit: "cover"}} src={this.props.fUrlToImage} alt="" />
+                        <img style={{width: "10rem" , height:"20rem", objectFit: "cover"}} src={this.props.fUrlToImage} alt="" />
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@ class FeaturedPost extends Component {
                     className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div className="col p-4 d-flex flex-column position-static">
                         <strong className="d-inline-block mb-2 text-success">Design</strong>
-                        <h3 className="mb-0">{this.props.postsTitle}</h3>
+                        <h3 className="mb-0" style={{width:"20rem", height:"2rem", overflow:"hidden"}}>{this.props.postsTitle}</h3>
                         <div className="mb-1 text-muted">{this.props.datePost}</div>
                         <p className="mb-auto">
                         {this.props.descriptionPost}
@@ -51,7 +51,7 @@ class FeaturedPost extends Component {
                         <a href={this.props.contLink} className="stretched-link">Continue reading</a>
                     </div>
                     <div className="col-auto d-none d-lg-block">
-                    <img style={{width: "200px" , height:"250px", objectFit: "cover"}} src={this.props.fUrlToImage} alt="" />
+                    <img style={{width: "10rem" , height:"20rem", objectFit: "cover"}} src={this.props.fUrlToImage} alt="" />
                     </div>
                 </div>
             </div>

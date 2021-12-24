@@ -63,14 +63,11 @@ class App extends Component {
     let listOfDates = this.state.articles.map((element) =>
       format(parseISO(element.publishedAt), "MMMM do yyyy | HH:mm")
     );
-    console.log(listOfDates[16] > listOfDates[17]);
-    let orderDates = listOfDates.sort(
-      (dateA, dateB) => dateB.date - dateA.date
+
+    let filteredDates = this.state.articles.filter((element) =>
+      format(parseISO(element.publishedAt), "MMMM do yyyy | HH:mm")
     );
 
-    let filteredDates = listOfDates.filter((element) =>
-      element.includes("November")
-    );
     console.log(filteredDates);
   };
 
