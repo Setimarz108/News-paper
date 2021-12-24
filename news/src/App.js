@@ -1,6 +1,8 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import FeaturedPost from "./components/Featured-post";
 import SinglePost from "./components/SinglePost";
 import Jumbotron from "./components/Jumbotron";

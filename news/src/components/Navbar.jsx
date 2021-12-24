@@ -1,9 +1,11 @@
 
 import React, { Component } from 'react'
+import Categories from './Categories'
+
+const categories =  ['business', 'entertainment', 'general', 'health', 'science', 'sports','technology']
 
 export default class Navbar extends Component {
-
-
+ 
     render() {
         return (
             <div>
@@ -43,7 +45,7 @@ export default class Navbar extends Component {
             </nav>
         </div>
 
-                
+                       
             </div>
         )
     }
