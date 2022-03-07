@@ -39,26 +39,15 @@ class App extends Component {
      }
     }
    
-   
- 
-  
-    
-
-  
-   
-   
-   
-    
-
-  
+     
 render() {
   return (
     <div className="App mx-auto"> {console.log(this.state)}
       
       <Navbar  />
-      <Jumbotron/> 
-      <FeaturedPost articles={this.state.posts} categories={this.state.category}/>
-      <ListOfPost articles={this.state.posts} categories={this.state.category}/>
+      {/* <Jumbotron/>  */}
+      {/* <FeaturedPost articles={this.state.posts} categories={this.state.category}/> */}
+      {/* <ListOfPost articles={this.state.posts} categories={this.state.category}/> */}
     </div>
   );
  }
